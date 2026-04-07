@@ -1,0 +1,42 @@
+{
+  "name": "baseons",
+  "displayName": "Baseons Snippets",
+  "description": "HTML-compatible snippets and syntax support for .bns.php files.",
+  "version": "0.0.1",
+  "publisher": "baseons",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Snippets",
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "baseons",
+        "aliases": ["Baseons", "baseons"],
+        "filenamePatterns": ["*.bns.php"],
+        "configuration": "language-configuration.json"
+      }
+    ],
+    "configurationDefaults": {
+      "emmet.includeLanguages": {
+        "baseons": "html"
+      }
+    },
+    "snippets": [
+      {
+        "language": "baseons",
+        "path": "snippets/baseons.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "baseons",
+        "scopeName": "text.html.baseons",
+        "path": "syntaxes/baseons.tmLanguage.json"
+      }
+    ]
+  }
+}

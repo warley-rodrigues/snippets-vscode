@@ -1,0 +1,38 @@
+{
+  "name": "Baseons",
+  "scopeName": "text.html.baseons",
+  "fileTypes": ["bns.php"],
+  "patterns": [
+    {"include": "#baseons-comment"},
+    {"include": "#baseons-echo"},
+    {"include": "#baseons-directive"},
+    {"include": "text.html.basic"}
+  ],
+  "repository": {
+    "baseons-comment": {
+      "patterns": [
+        {
+          "name": "comment.block.baseons",
+          "begin": "\\{\\{--",
+          "end": "--\\}\\}"
+        }
+      ]
+    },
+    "baseons-echo": {
+      "patterns": [
+        {
+          "name": "variable.other.readwrite.baseons",
+          "match": "\\{\\{\\s*[^\\}]+\\s*\\}\\}"
+        }
+      ]
+    },
+    "baseons-directive": {
+      "patterns": [
+        {
+          "name": "keyword.control.baseons",
+          "match": "@(?:if|else|elseif|foreach|while|for|endif|endfor|endforeach|section|endsection|endwhile|break|continue|include)\\b"
+        }
+      ]
+    }
+  }
+}
