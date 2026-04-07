@@ -3,10 +3,10 @@
   "scopeName": "text.html.baseons",
   "fileTypes": ["bns.php"],
   "patterns": [
-    {"include": "#baseons-comment"},
-    {"include": "#baseons-echo"},
-    {"include": "#baseons-directive"},
-    {"include": "text.html.basic"}
+    { "include": "#baseons-comment" },
+    { "include": "#baseons-echo" },
+    { "include": "#baseons-directive" },
+    { "include": "text.html.basic" }
   ],
   "repository": {
     "baseons-comment": {
@@ -21,8 +21,20 @@
     "baseons-echo": {
       "patterns": [
         {
-          "name": "variable.other.readwrite.baseons",
-          "match": "\\{\\{\\s*[^\\}]+\\s*\\}\\}"
+          "name": "meta.embedded.block.php.baseons",
+          "begin": "\\{\\{",
+          "beginCaptures": {
+            "0": { "name": "punctuation.section.embedded.begin.baseons" }
+          },
+          "end": "\\}\\}",
+          "endCaptures": {
+            "0": { "name": "punctuation.section.embedded.end.baseons" }
+          },
+          "patterns": [
+            {
+              "include": "source.php"
+            }
+          ]
         }
       ]
     },
