@@ -12,6 +12,10 @@
     "Snippets",
     "Programming Languages"
   ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onLanguage:baseons"
+  ],
   "contributes": {
     "languages": [
       {
@@ -24,6 +28,9 @@
           "*.bns.php",
           "baseons"
         ],
+        "extensions": [
+          ".bns.php"
+        ],
         "configuration": "language-configuration.json",
         "icon": {
           "light": "images/icon.png",
@@ -34,6 +41,9 @@
     "configurationDefaults": {
       "emmet.includeLanguages": {
         "baseons": "html"
+      },
+      "[baseons]": {
+        "editor.defaultFormatter": "Baseons.baseons"
       }
     },
     "snippets": [
@@ -49,5 +59,8 @@
         "path": "syntaxes/baseons.tmLanguage.json"
       }
     ]
+  },
+  "dependencies": {
+    "prettier": "^3.8.1"
   }
 }
