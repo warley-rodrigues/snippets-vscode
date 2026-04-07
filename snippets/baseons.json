@@ -8,6 +8,7 @@
     ],
     "description": "Create an if block"
   },
+
   "Baseons Else Block": {
     "prefix": "@else",
     "body": [
@@ -16,6 +17,7 @@
     ],
     "description": "Create an else block"
   },
+
   "Baseons Elseif Block": {
     "prefix": "@elseif",
     "body": [
@@ -24,6 +26,7 @@
     ],
     "description": "Create an elseif block"
   },
+
   "Baseons Foreach Block": {
     "prefix": "@foreach",
     "body": [
@@ -33,6 +36,7 @@
     ],
     "description": "Create a foreach block"
   },
+
   "Baseons While Block": {
     "prefix": "@while",
     "body": [
@@ -42,6 +46,7 @@
     ],
     "description": "Create a while block"
   },
+
   "Baseons For Block": {
     "prefix": "@for",
     "body": [
@@ -51,11 +56,13 @@
     ],
     "description": "Create a for block"
   },
+
   "Baseons Include": {
     "prefix": "@include",
     "body": "@include('${1:view}')",
     "description": "Insert an include directive"
   },
+
   "Baseons Section Block": {
     "prefix": "@section",
     "body": [
@@ -65,21 +72,25 @@
     ],
     "description": "Create a section block"
   },
+
   "Baseons Break": {
     "prefix": "@break",
     "body": "@break",
     "description": "Insert a break statement"
   },
+
   "Baseons Continue": {
     "prefix": "@continue",
     "body": "@continue",
     "description": "Insert a continue statement"
   },
+
   "Baseons Echo": {
     "prefix": "{{",
     "body": "{{ ${1:expression} }}",
     "description": "Insert an echo expression"
   },
+
   "Baseons Comment": {
     "prefix": "{{--",
     "body": "{{-- ${1:comment} --}}",
