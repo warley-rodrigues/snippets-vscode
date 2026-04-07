@@ -5,6 +5,7 @@
   "patterns": [
     { "include": "#baseons-comment" },
     { "include": "#baseons-echo" },
+    { "include": "#baseons-php-block" },
     { "include": "#baseons-directive" },
     { "include": "text.html.basic" }
   ],
@@ -18,6 +19,7 @@
         }
       ]
     },
+
     "baseons-echo": {
       "patterns": [
         {
@@ -38,6 +40,32 @@
         }
       ]
     },
+
+    "baseons-php-block": {
+      "patterns": [
+        {
+          "name": "meta.embedded.block.php.baseons",
+          "begin": "@php",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.begin.baseons"
+            }
+          },
+          "end": "@endphp",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.section.embedded.end.baseons"
+            }
+          },
+          "patterns": [
+            {
+              "include": "source.php"
+            }
+          ]
+        }
+      ]
+    },
+
     "baseons-directive": {
       "patterns": [
         {
