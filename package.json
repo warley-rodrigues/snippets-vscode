@@ -3,7 +3,8 @@
   "displayName": "Baseons Snippets",
   "description": "HTML-compatible snippets and syntax support for .bns.php files.",
   "version": "0.0.1",
-  "publisher": "baseons",
+  "publisher": "Baseons",
+  "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -15,9 +16,19 @@
     "languages": [
       {
         "id": "baseons",
-        "aliases": ["Baseons", "baseons"],
-        "filenamePatterns": ["*.bns.php"],
-        "configuration": "language-configuration.json"
+        "aliases": [
+          "Baseons",
+          "baseons"
+        ],
+        "filenamePatterns": [
+          "*.bns.php"
+        ],
+        "configuration": "language-configuration.json",
+        
+        "icon": {
+          "light": "images/icon.png",
+          "dark": "images/icon.png"
+        }
       }
     ],
     "configurationDefaults": {
