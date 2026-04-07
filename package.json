@@ -12,10 +12,6 @@
     "Snippets",
     "Programming Languages"
   ],
-  "main": "./extension.js",
-  "activationEvents": [
-    "onLanguage:baseons"
-  ],
   "contributes": {
     "languages": [
       {
@@ -40,11 +36,12 @@
     ],
     "configurationDefaults": {
       "emmet.includeLanguages": {
-        "baseons": "html"
-      },
-      "[baseons]": {
-        "editor.defaultFormatter": "Baseons.baseons"
-      }
+          "baseons": "html",
+          "php": "html"
+        },
+        "[baseons]": {
+          "editor.defaultFormatter": "Baseons.baseons"
+        }
     },
     "snippets": [
       {
