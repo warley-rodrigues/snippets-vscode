@@ -1,49 +1,31 @@
 {
   "Baseons If Block": {
     "prefix": "@if",
-    "body": [
-      "@if (${1:condition})",
-      "    ${0}",
-      "@endif"
-    ],
+    "body": ["@if (${1:condition})", "    ${0}", "@endif"],
     "description": "Create an if block"
   },
 
   "Baseons Else Block": {
     "prefix": "@else",
-    "body": [
-      "@else",
-      "    ${0}"
-    ],
+    "body": ["@else", "    ${0}"],
     "description": "Create an else block"
   },
 
   "Baseons Elseif Block": {
     "prefix": "@elseif",
-    "body": [
-      "@elseif (${1:condition})",
-      "    ${0}"
-    ],
+    "body": ["@elseif (${1:condition})", "    ${0}"],
     "description": "Create an elseif block"
   },
 
   "Baseons Foreach Block": {
     "prefix": "@foreach",
-    "body": [
-      "@foreach (${1:item} in ${2:list})",
-      "    ${0}",
-      "@endforeach"
-    ],
+    "body": ["@foreach (${1:item} in ${2:list})", "    ${0}", "@endforeach"],
     "description": "Create a foreach block"
   },
 
   "Baseons While Block": {
     "prefix": "@while",
-    "body": [
-      "@while (${1:condition})",
-      "    ${0}",
-      "@endwhile"
-    ],
+    "body": ["@while (${1:condition})", "    ${0}", "@endwhile"],
     "description": "Create a while block"
   },
 
@@ -65,12 +47,38 @@
 
   "Baseons Section Block": {
     "prefix": "@section",
-    "body": [
-      "@section('${1:name}')",
-      "    ${0}",
-      "@endsection"
-    ],
+    "body": ["@section('${1:name}')", "    ${0}", "@endsection"],
     "description": "Create a section block"
+  },
+
+  "Baseons Section Yield": {
+    "prefix": "@yield",
+    "body": ["@yield('${1:name}')"],
+    "description": "Create a section yield"
+  },
+
+  "Baseons Section Url": {
+    "prefix": "@url",
+    "body": ["@url('${1:path}')"],
+    "description": "Create a section url"
+  },
+
+  "Baseons Section Route": {
+    "prefix": "@route",
+    "body": ["@route('${1:name}')"],
+    "description": "Create a section route"
+  },
+
+  "Baseons Csrf": {
+    "prefix": "@csrf",
+    "body": "@csrf",
+    "description": "Insert a csrf statement"
+  },
+
+  "Baseons Section PHP": {
+    "prefix": "@php",
+    "body": ["@php", "    ${0}", "@endphp"],
+    "description": "Create a section php"
   },
 
   "Baseons Break": {

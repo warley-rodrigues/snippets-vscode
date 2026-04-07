@@ -42,7 +42,7 @@
       "patterns": [
         {
           "name": "keyword.control.baseons",
-          "match": "@(?:if|else|elseif|foreach|while|for|endif|endfor|endforeach|section|endsection|endwhile|break|continue|include)\\b"
+          "match": "@(?:if|else|elseif|foreach|while|for|endif|endfor|endforeach|section|endsection|endwhile|break|continue|include|yield|url|route|csrf|php|endphp)\\b"
         }
       ]
     }
