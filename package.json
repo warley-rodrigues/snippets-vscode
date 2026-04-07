@@ -59,8 +59,5 @@
         "path": "syntaxes/baseons.tmLanguage.json"
       }
     ]
-  },
-  "dependencies": {
-    "prettier": "^3.8.1"
   }
 }
