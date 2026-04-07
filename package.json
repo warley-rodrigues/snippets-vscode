@@ -56,7 +56,12 @@
       {
         "language": "baseons",
         "scopeName": "text.html.baseons",
-        "path": "syntaxes/baseons.tmLanguage.json"
+        "path": "syntaxes/baseons.tmLanguage.json",
+        "embeddedLanguages": {
+          "source.php": "php",
+          "source.css": "css",
+          "source.js": "javascript"
+        }
       }
     ]
   }
