@@ -20,5 +20,16 @@
 @csrf
 
 @php @endphp
+
+@if (condition)
+
+@endif
+
+@foreach (item in list)
+@break
+@continue
+@endforeach
+
+
 </body>
 </html>
