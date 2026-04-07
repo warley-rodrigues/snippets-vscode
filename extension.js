@@ -1,20 +1,29 @@
 const vscode = require('vscode');
 
 function activate(context) {
-
     const provider = vscode.languages.registerDocumentFormattingEditProvider('baseons', {
         provideDocumentFormattingEdits(document) {
+            try {
+                const fullText = document.getText();
+                if (!fullText.trim()) return [];
 
-            const fullText = document.getText();
+                const formatted = formatHTMLLike(fullText);
 
-            const formatted = formatHTMLLike(fullText);
+                // Garantia de que o arquivo não será limpo por erro na função
+                if (!formatted) return [];
 
-            const fullRange = new vscode.Range(
-                document.positionAt(0),
-                document.positionAt(fullText.length)
-            );
+                // Seleção segura do documento inteiro
+                const lastLine = document.lineAt(document.lineCount - 1);
+                const fullRange = new vscode.Range(
+                    new vscode.Position(0, 0),
+                    lastLine.range.end
+                );
 
-            return [vscode.TextEdit.replace(fullRange, formatted)];
+                return [vscode.TextEdit.replace(fullRange, formatted)];
+            } catch (err) {
+                console.error("Erro na formatação:", err);
+                return [];
+            }
         }
     });
 
@@ -23,20 +32,47 @@ function activate(context) {
 
 function formatHTMLLike(text) {
     let indent = 0;
-    const lines = text.split('\n');
+    let isInsideStyle = false;
+    const lines = text.split(/\r?\n/);
 
     return lines.map(line => {
-        let trimmed = line.trim();
+        const trimmed = line.trim();
 
-        // fecha tag diminui indent
-        if (trimmed.match(/^<\/.+>/)) {
+        // Se a linha estiver vazia, retorna apenas a quebra de linha
+        if (!trimmed) return '';
+
+        // Detecção de entrada/saída de bloco de estilo
+        if (trimmed.startsWith('<style')) {
+            const result = '  '.repeat(Math.max(indent, 0)) + trimmed;
+            indent++;
+            isInsideStyle = true;
+            return result;
+        }
+
+        if (trimmed.startsWith('</style')) {
+            indent--;
+            isInsideStyle = false;
+            return '  '.repeat(Math.max(indent, 0)) + trimmed;
+        }
+
+        // Se estiver dentro do style, apenas mantém a indentação atual sem processar tags
+        if (isInsideStyle) {
+            return '  '.repeat(Math.max(indent, 0)) + trimmed;
+        }
+
+        // Lógica Normal para HTML
+        if (trimmed.match(/^<\//)) {
             indent--;
         }
 
-        let result = '  '.repeat(Math.max(indent, 0)) + trimmed;
+        const currentIndent = Math.max(indent, 0);
+        const result = '  '.repeat(currentIndent) + trimmed;
 
-        // abre tag aumenta indent
-        if (trimmed.match(/^<[^\/!][^>]*[^\/]>$/)) {
+        const startsWithOpenTag = trimmed.match(/^<[^\/!]/);
+        const isSelfClosing = trimmed.match(/\/>$/) || trimmed.match(/<(img|br|hr|input|meta|link)[^>]*>/i);
+        const closesOnSameLine = trimmed.match(/<\/[^>]+>$/);
+
+        if (startsWithOpenTag && !isSelfClosing && !closesOnSameLine) {
             indent++;
         }
 
@@ -46,7 +82,4 @@ function formatHTMLLike(text) {
 
 function deactivate() { }
 
-module.exports = {
-    activate,
-    deactivate
-};
+module.exports = { activate, deactivate };
