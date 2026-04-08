@@ -2,7 +2,7 @@
 
 VS Code snippets and HTML-compatible syntax support for `*.bns.php` files.
 
-## Features
+## Feature
 
 - Custom language `baseons` for `*.bns.php` files
 - HTML compatibility via `emmet.includeLanguages`
