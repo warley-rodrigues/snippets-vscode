@@ -14,22 +14,27 @@
   ],
   "main": "./extension.js",
   "activationEvents": [
-    "onLanguage:baseons"
-  ],
+  "onLanguage:baseons",
+  "onLanguage:html"
+],
   "contributes": {
     "languages": [
       {
         "id": "baseons",
         "aliases": [
           "Baseons",
-          "baseons"
+          "baseons",
+          "base"
         ],
         "filenamePatterns": [
           "*.bns.php",
-          "baseons"
+          "baseons",
+          "base",
+          "*.html.php"
         ],
         "extensions": [
-          ".bns.php"
+          ".bns.php",
+          ".html.php"
         ],
         "configuration": "language-configuration.json",
         "icon": {
@@ -43,7 +48,7 @@
         "baseons": "html"
       },
       "[baseons]": {
-        "editor.defaultFormatter": "Baseons.baseons"
+        "editor.defaultFormatter": "vscode.html-language-features"
       }
     },
     "snippets": [

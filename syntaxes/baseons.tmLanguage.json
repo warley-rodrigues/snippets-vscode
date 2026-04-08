@@ -1,13 +1,16 @@
 {
   "name": "Baseons",
   "scopeName": "text.html.baseons",
-  "fileTypes": ["bns.php"],
+  "fileTypes": ["bns.php", "html.php"],
   "patterns": [
     { "include": "#baseons-comment" },
     { "include": "#baseons-echo" },
     { "include": "#baseons-php-block" },
     { "include": "#baseons-directive" },
+    { "include": "#baseons-script" },
+    { "include": "#baseons-style" },
     { "include": "text.html.basic" }
+
   ],
   "repository": {
     "baseons-comment": {
@@ -60,6 +63,51 @@
           "patterns": [
             {
               "include": "source.php"
+            }
+          ]
+        }
+      ]
+    },
+
+    "baseons-script": {
+      "patterns": [
+        {
+          "name": "meta.embedded.block.javascript.baseons",
+          "begin": "<script[^>]*>",
+          "beginCaptures": {
+            "0": { "name": "entity.name.tag.script.html" }
+          },
+          "end": "</script>",
+          "endCaptures": {
+            "0": { "name": "entity.name.tag.script.html" }
+          },
+          "patterns": [
+            {
+              "include": "source.js.jsx"
+            },
+            {
+              "include": "source.js"
+            }
+          ]
+        }
+      ]
+    },
+
+    "baseons-style": {
+      "patterns": [
+        {
+          "name": "meta.embedded.block.css.baseons",
+          "begin": "<style[^>]*>",
+          "beginCaptures": {
+            "0": { "name": "entity.name.tag.style.html" }
+          },
+          "end": "</style>",
+          "endCaptures": {
+            "0": { "name": "entity.name.tag.style.html" }
+          },
+          "patterns": [
+            {
+              "include": "source.css"
             }
           ]
         }
