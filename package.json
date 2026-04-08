@@ -14,9 +14,9 @@
   ],
   "main": "./extension.js",
   "activationEvents": [
-  "onLanguage:baseons",
-  "onLanguage:html"
-],
+    "onLanguage:baseons",
+    "onLanguage:html"
+  ],
   "contributes": {
     "languages": [
       {
@@ -65,7 +65,9 @@
         "embeddedLanguages": {
           "source.php": "php",
           "source.css": "css",
-          "source.js": "javascript"
+          "source.js": "javascript",
+          "meta.embedded.block.javascript.baseons": "javascript",
+          "meta.embedded.block.css.baseons": "css"
         }
       }
     ]
