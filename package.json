@@ -47,6 +47,8 @@
       "emmet.includeLanguages": {
         "baseons": "html"
       },
+      "html.validate.scripts": true,
+      "html.validate.styles": true,
       "[baseons]": {
         "editor.defaultFormatter": "vscode.html-language-features"
       }
@@ -54,20 +56,18 @@
     "snippets": [
       {
         "language": "baseons",
-        "path": "snippets/baseons.json"
+        "path": "./snippets/baseons.json"
       }
     ],
     "grammars": [
       {
         "language": "baseons",
         "scopeName": "text.html.baseons",
-        "path": "syntaxes/baseons.tmLanguage.json",
+        "path": "./syntaxes/baseons.tmLanguage.json",
         "embeddedLanguages": {
           "source.php": "php",
           "source.css": "css",
-          "source.js": "javascript",
-          "meta.embedded.block.javascript.baseons": "javascript",
-          "meta.embedded.block.css.baseons": "css"
+          "source.js": "javascript"
         }
       }
     ]

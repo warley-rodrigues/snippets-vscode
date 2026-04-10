@@ -34,23 +34,19 @@
 
 
     @foreach(item in list)
-        @continue
-        @break
+    @continue
+    @break
     @endforeach
 
-
     <script>
-      let t = 'sdfasfsdff';
-
-      setTimeout(() => {
-
-      }, 1000);
+      docunnn
 
     </script>
 
 
     <style>
       body {
+      color: #000;
 
       }
 
