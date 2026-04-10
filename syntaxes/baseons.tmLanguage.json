@@ -117,7 +117,7 @@
     "baseons-directive": {
       "patterns": [
         {
-          "begin": "(@(?:if|elseif|foreach|while|for))\\s*(\\()",
+          "begin": "(@(?:if|elseif|foreach|while|for|section|include|yield|url|route|csrf))\\s*(\\()",
           "beginCaptures": {
             "1": { "name": "keyword.control.baseons" },
             "2": { "name": "punctuation.definition.parameters.begin.baseons" }

@@ -21,7 +21,7 @@
 
     @php @endphp
 
-    @if(condition)
+    @if('dition')
 
     @endif
 
@@ -29,10 +29,15 @@
 
     @endif
 
-    @foreach 
+    
+
+    @foreach (item in list)
     @break
     @continue
+
     @endforeach
+
+
 
     <style>
 
