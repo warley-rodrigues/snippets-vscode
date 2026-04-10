@@ -1,27 +1,47 @@
 # Baseons Snippets
 
-VS Code snippets and HTML-compatible syntax support for `*.bns.php` files.
+VS Code extension that provides snippet support and HTML-compatible syntax highlighting for `*.bns.html` and `*.bns.php` files.
 
-## Feature
+## Features
 
-- Custom language `baseons` for `*.bns.php` files
-- HTML compatibility via `emmet.includeLanguages`
-- Snippets for directives like `@if`, `@else`, `@foreach`, `@for`, `@while`, `@include`, `@break`, `@continue`
-- Echo block syntax: `{{ expression }}`
-- Comment block syntax: `{{-- comment --}}`
+- Custom `baseons` language support for Baseons files
+- HTML-compatible syntax with embedded PHP, JavaScript, and CSS blocks
+- Syntax highlighting for Baseons directives such as:
+  - `@if`, `@else`, `@elseif`, `@endif`
+  - `@foreach`, `@endforeach`, `@for`, `@endfor`, `@while`, `@endwhile`
+  - `@section`, `@endsection`, `@include`, `@yield`
+  - `@url`, `@route`, `@csrf`, `@break`, `@continue`
+- Support for `{{ ... }}` expression blocks and `{{-- ... --}}` comments
+- `<script>` blocks are parsed as JavaScript and `<style>` blocks as CSS
+- Emmet HTML support enabled for the `baseons` language
+- Default formatting compatible with HTML
 
 ## Installation
 
-1. Copy this folder into your VS Code extensions directory or install from the VSIX when packaged.
-2. Open a `.bns.php` file.
+1. Copy the extension folder into your VS Code extensions directory or install from the packaged VSIX.
+2. Open a `*.bns.html` or `*.bns.php` file.
 3. The language mode should be detected as `Baseons`.
 
-## Configuration
+## Quick Test
 
-The extension adds the following default Emmet configuration:
+- Open `test.bns.html` in VS Code.
+- Check syntax highlighting for directives and embedded blocks.
+- Use `Format Document` to apply formatting.
+
+## Default Configuration
+
+The extension adds the following default setting:
 
 ```json
 "emmet.includeLanguages": {
   "baseons": "html"
 }
 ```
+
+## Contributing
+
+Contributions and fixes are welcome, especially for:
+
+- new Baseons snippets
+- improvements to the language grammar
+- support for additional directives and file patterns

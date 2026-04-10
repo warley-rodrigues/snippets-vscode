@@ -6,7 +6,6 @@
     <title>Test</title>
   </head>
   <body>
-
     @include('view')
 
     @yield('name')
@@ -30,7 +29,7 @@
     @endif
 
     @if(condition)
-        
+
     @endif
 
 
