@@ -29,21 +29,23 @@
 
     @endif
 
+    @if(condition)
+        
+    @endif
 
 
-    @foreach ()
-    @break
-    @continue
-
+    @foreach(item in list)
+        @continue
+        @break
     @endforeach
 
+
     <script>
-      let t= 'sdfasfsdff';
+      let t = 'sdfasfsdff';
 
       setTimeout(() => {
 
-      }, timeout);
-
+      }, 1000);
 
     </script>
 

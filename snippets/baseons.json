@@ -1,7 +1,7 @@
 {
   "Baseons If Block": {
     "prefix": "@if",
-    "body": ["@if (${1:condition})", "    ${0}", "@endif"],
+    "body": ["@if(${1:condition})", "    ${0}", "@endif"],
     "description": "Create an if block"
   },
 
@@ -13,26 +13,26 @@
 
   "Baseons Elseif Block": {
     "prefix": "@elseif",
-    "body": ["@elseif (${1:condition})", "    ${0}"],
+    "body": ["@elseif(${1:condition})", "    ${0}"],
     "description": "Create an elseif block"
   },
 
   "Baseons Foreach Block": {
     "prefix": "@foreach",
-    "body": ["@foreach (${1:item} in ${2:list})", "    ${0}", "@endforeach"],
+    "body": ["@foreach(${1:item} in ${2:list})", "    ${0}", "@endforeach"],
     "description": "Create a foreach block"
   },
 
   "Baseons While Block": {
     "prefix": "@while",
-    "body": ["@while (${1:condition})", "    ${0}", "@endwhile"],
+    "body": ["@while(${1:condition})", "    ${0}", "@endwhile"],
     "description": "Create a while block"
   },
 
   "Baseons For Block": {
     "prefix": "@for",
     "body": [
-      "@for (${1:init}; ${2:condition}; ${3:update})",
+      "@for(${1:init}; ${2:condition}; ${3:update})",
       "    ${0}",
       "@endfor"
     ],
