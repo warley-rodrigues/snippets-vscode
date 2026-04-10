@@ -29,17 +29,30 @@
 
     @endif
 
-    
 
-    @foreach (item in list)
+
+    @foreach ()
     @break
     @continue
 
     @endforeach
 
 
+    <script>
+      let t= 'sdfasfsdff';
+
+      setTimeout(() => {
+
+      }, timeout);
+
+
+    </script>
+
 
     <style>
+      body {
+
+      }
 
     </style>
   </style>
