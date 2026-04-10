@@ -37,7 +37,6 @@
 
     @endforeach
 
-
     <script>
       let t= 'sdfasfsdff';
 
