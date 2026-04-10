@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test</title>
-</head>
-<body>
+  </head>
+  <body>
 
-@include('view')
+    @include('view')
 
-@yield('name')
+    @yield('name')
 
-@section('name') @endsection
+    @section('name') @endsection
 
-@url() @url('path')
+    @url() @url('path')
 
-@route()
+    @route()
 
-@csrf
+    @csrf
 
-@php @endphp
+    @php @endphp
 
-@if (condition)
+    @if(condition)
 
-@endif
+    @endif
 
-@foreach (item in list)
-@break
-@continue
-@endforeach
+    @if(!empty())
 
+    @endif
+
+    @foreach 
+    @break
+    @continue
+    @endforeach
+
+    <style>
+
+    </style>
+  </style>
 </body>
 </html>

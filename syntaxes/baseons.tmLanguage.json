@@ -117,6 +117,22 @@
     "baseons-directive": {
       "patterns": [
         {
+          "begin": "(@(?:if|elseif|foreach|while|for))\\s*(\\()",
+          "beginCaptures": {
+            "1": { "name": "keyword.control.baseons" },
+            "2": { "name": "punctuation.definition.parameters.begin.baseons" }
+          },
+          "end": "(\\))",
+          "endCaptures": {
+            "1": { "name": "punctuation.definition.parameters.end.baseons" }
+          },
+          "patterns": [
+            {
+              "include": "source.php"
+            }
+          ]
+        },
+        {
           "name": "keyword.control.baseons",
           "match": "@(?:if|else|elseif|foreach|while|for|endif|endfor|endforeach|section|endsection|endwhile|break|continue|include|yield|url|route|csrf|php|endphp)\\b"
         }
