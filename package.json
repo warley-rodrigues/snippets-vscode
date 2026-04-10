@@ -14,8 +14,7 @@
   ],
   "main": "./extension.js",
   "activationEvents": [
-    "onLanguage:baseons",
-    "onLanguage:html"
+    "onLanguage:baseons"
   ],
   "contributes": {
     "languages": [
@@ -36,7 +35,7 @@
           ".bns.php",
           ".html.php"
         ],
-        "configuration": "language-configuration.json",
+        "configuration": "./language-configuration.json",
         "icon": {
           "light": "images/icon.png",
           "dark": "images/icon.png"
@@ -71,5 +70,8 @@
         }
       }
     ]
+  },
+  "dependencies": {
+    "prettier": "^3.8.2"
   }
 }

@@ -3,12 +3,12 @@
   "scopeName": "text.html.baseons",
   "fileTypes": ["bns.php", "html.php"],
   "patterns": [
+    { "include": "#baseons-script" },
+    { "include": "#baseons-style" },
     { "include": "#baseons-comment" },
     { "include": "#baseons-echo" },
     { "include": "#baseons-php-block" },
     { "include": "#baseons-directive" },
-    { "include": "#baseons-script" },
-    { "include": "#baseons-style" },
     { "include": "text.html.basic" }
   ],
   "repository": {

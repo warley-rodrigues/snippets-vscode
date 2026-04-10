@@ -39,7 +39,9 @@
     @endforeach
 
     <script>
-      docunnn
+      setTimeout(() => {
+
+      }, timeout);
 
     </script>
 
